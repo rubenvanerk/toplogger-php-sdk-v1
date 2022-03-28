@@ -5,5 +5,5 @@ use RubenVanErk\TopLoggerPhpSdk\TopLogger;
 it('actually works', function () {
     $sdk = new TopLogger();
 
-    var_dump(count($sdk->gyms()->climbs(8)->filter(['deleted' => false, 'live' => true])->get()));
+    var_dump($sdk->ascends()->filter(['used' => true, 'user' => ['uid' => '7163205870'], 'climb' => ['gym_id' => 8, 'deleted' => false, 'live' => true]])->get());
 });

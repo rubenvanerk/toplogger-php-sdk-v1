@@ -25,4 +25,7 @@ $sdk->users()->find('104045');
 // get a user's stats
 $sdk->users()->stats('104045');
 
+// get a users's ascends in a certain gym
+$sdk->ascends()->filter(['used' => true, 'user' => ['uid' => '7163205870'], 'climb' => ['gym_id' => 8, 'deleted' => false, 'live' => true]])->get()
+
 ```

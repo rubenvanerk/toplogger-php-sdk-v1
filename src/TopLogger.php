@@ -7,6 +7,7 @@ use Http\Client\Common\Plugin\BaseUriPlugin;
 use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Message\UriFactory;
+use RubenVanErk\TopLoggerPhpSdk\Endpoints\Ascends;
 use RubenVanErk\TopLoggerPhpSdk\Endpoints\Gyms;
 use RubenVanErk\TopLoggerPhpSdk\Endpoints\Users;
 
@@ -44,5 +45,10 @@ final class TopLogger
     public function users(): Users
     {
         return new Users($this);
+    }
+
+    public function ascends(): Ascends
+    {
+        return new Ascends($this);
     }
 }
