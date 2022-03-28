@@ -1,0 +1,43 @@
+{
+    "name": "rubenvanerk/toplogger-php-sdk",
+    "description": "PHP SDK for the TopLogger API",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ruben van Erk",
+            "email": "contact@rubenvanerk.nl"
+        }
+    ],
+    "require": {
+        "php": "^8.0|^8.1",
+        "php-http/client-common": "^2.5",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0"
+    },
+    "require-dev": {
+        "laminas/laminas-diactoros": "^2.8",
+        "pestphp/pest": "^1.21",
+        "php-http/curl-client": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "RubenVanErk\\TopLoggerPhpSdk\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RubenVanErk\\TopLoggerPhpSdk\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
