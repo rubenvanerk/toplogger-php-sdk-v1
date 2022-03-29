@@ -7,21 +7,18 @@ use stdClass;
 
 class Users extends Endpoint
 {
-    /**
-     * @throws \Http\Client\Exception
-     */
     public function all(): array
     {
-        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/users'));
+        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/users' . $this->buildQuery()));
     }
 
     public function find(int|string $id): stdClass
     {
-        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/users/' . $id));
+        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/users/' . $id . $this->buildQuery()));
     }
 
     public function stats(int|string $id): stdClass
     {
-        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/users/' . $id . '/stats'));
+        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/users/' . $id . '/stats' . $this->buildQuery()));
     }
 }

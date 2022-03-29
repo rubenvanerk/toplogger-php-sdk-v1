@@ -19,6 +19,6 @@ final class Ascends extends Endpoint
      */
     public function all(): array
     {
-        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/ascends'));
+        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/ascends' . $this->buildQuery()));
     }
 }

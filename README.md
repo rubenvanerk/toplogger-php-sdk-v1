@@ -26,6 +26,9 @@ $sdk->users()->find('104045');
 $sdk->users()->stats('104045');
 
 // get a users's ascends in a certain gym
-$sdk->ascends()->filter(['used' => true, 'user' => ['uid' => '7163205870'], 'climb' => ['gym_id' => 8, 'deleted' => false, 'live' => true]])->get()
+$sdk->ascends()->filter(['used' => true, 'user' => ['uid' => '7163205870'], 'climb' => ['gym_id' => 8, 'deleted' => false, 'live' => true]])->get();
+
+// include data
+$sdk->gyms()->include(['climbs', 'walls'])->find('8');
 
 ```

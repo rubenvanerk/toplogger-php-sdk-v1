@@ -7,17 +7,14 @@ use stdClass;
 
 final class Gyms extends Endpoint
 {
-    /**
-     * @throws \Http\Client\Exception
-     */
     public function all(): array
     {
-        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/gyms'));
+        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/gyms' . $this->buildQuery()));
     }
 
     public function find(int|string $id): stdClass
     {
-        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/gyms/' . $id));
+        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/gyms/' . $id . $this->buildQuery()));
     }
 
     public function climbs(int|string $gymId): Endpoint
