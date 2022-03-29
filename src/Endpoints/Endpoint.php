@@ -11,6 +11,7 @@ abstract class Endpoint
     protected string $currentUri = '';
     protected array $filters = [];
     protected array $includes = [];
+    protected array $params = [];
 
     public function __construct(protected TopLogger $sdk)
     {
@@ -47,11 +48,13 @@ abstract class Endpoint
 
     protected function buildQuery(): string
     {
-        if (!$this->filters && !$this->includes) {
+        if (!$this->filters && !$this->includes && !$this->params) {
             return '';
         }
 
-        return '?json_params=' . $this->buildJsonParams();
+        $params = array_merge($this->params, ['json_params' => $this->buildJsonParams()]);
+
+        return '?' . urldecode(http_build_query($params));
     }
 
     protected function buildJsonParams(): string
@@ -66,5 +69,11 @@ abstract class Endpoint
         }
 
         return json_encode($jsonParams);
+    }
+
+    public function param(array $params)
+    {
+        $this->params = array_merge($this->params, $params);
+        return $this;
     }
 }
