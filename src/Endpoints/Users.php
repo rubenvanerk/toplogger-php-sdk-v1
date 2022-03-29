@@ -2,23 +2,22 @@
 
 namespace RubenVanErk\TopLoggerPhpSdk\Endpoints;
 
-use RubenVanErk\TopLoggerPhpSdk\HttpClient\Message\ResponseMediator;
 use stdClass;
 
 class Users extends Endpoint
 {
     public function all(): array
     {
-        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/users' . $this->buildQuery()));
+        return $this->getJson('/users');
     }
 
     public function find(int|string $id): stdClass
     {
-        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/users/' . $id . $this->buildQuery()));
+        return $this->getJson('/users/' . $id);
     }
 
     public function stats(int|string $id): stdClass
     {
-        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/users/' . $id . '/stats' . $this->buildQuery()));
+        return $this->getJson('/users/' . $id . '/stats');
     }
 }

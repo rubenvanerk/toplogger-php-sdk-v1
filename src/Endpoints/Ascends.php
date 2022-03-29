@@ -14,11 +14,8 @@ final class Ascends extends Endpoint
         parent::__construct($sdk);
     }
 
-    /**
-     * @throws \Http\Client\Exception
-     */
     public function all(): array
     {
-        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/ascends' . $this->buildQuery()));
+        return $this->getJson('/ascends');
     }
 }

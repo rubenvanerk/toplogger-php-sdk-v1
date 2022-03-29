@@ -2,19 +2,18 @@
 
 namespace RubenVanErk\TopLoggerPhpSdk\Endpoints;
 
-use RubenVanErk\TopLoggerPhpSdk\HttpClient\Message\ResponseMediator;
 use stdClass;
 
 final class Gyms extends Endpoint
 {
     public function all(): array
     {
-        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/gyms' . $this->buildQuery()));
+        return $this->getJson('/gyms');
     }
 
     public function find(int|string $id): stdClass
     {
-        return ResponseMediator::getContent($this->sdk->getHttpClient()->get('/gyms/' . $id . $this->buildQuery()));
+        return $this->getJson('/gyms/' . $id);
     }
 
     public function climbs(int|string $gymId): Endpoint
