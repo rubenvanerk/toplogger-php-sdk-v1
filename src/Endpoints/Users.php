@@ -8,16 +8,16 @@ class Users extends Endpoint
 {
     public function all(): array
     {
-        return $this->getJson('/users');
+        return $this->get('/users');
     }
 
     public function find(int|string $id): stdClass
     {
-        return $this->getJson('/users/' . $id);
+        return $this->get('/users/' . $id);
     }
 
     public function stats(int|string $id): stdClass
     {
-        return $this->getJson('/users/' . $id . '/stats');
+        return $this->get('/users/' . $id . '/stats');
     }
 }

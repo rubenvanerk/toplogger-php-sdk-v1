@@ -8,12 +8,12 @@ final class Gyms extends Endpoint
 {
     public function all(): array
     {
-        return $this->getJson('/gyms');
+        return $this->get('/gyms');
     }
 
     public function find(int|string $id): stdClass
     {
-        return $this->getJson('/gyms/' . $id);
+        return $this->get('/gyms/' . $id);
     }
 
     public function climbs(int|string $gymId): Endpoint

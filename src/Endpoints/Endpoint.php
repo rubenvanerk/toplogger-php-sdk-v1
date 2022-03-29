@@ -16,16 +16,13 @@ abstract class Endpoint
     {
     }
 
-    protected function getJson(string $uri): array|stdClass
+    public function get(string $uri = null): stdClass|array
     {
+        if (is_null($uri)) {
+            $uri = $this->currentUri;
+        }
+
         return ResponseMediator::getContent($this->sdk->getHttpClient()->get($uri . $this->buildQuery()));
-    }
-
-    public function get(): stdClass|array
-    {
-        $query = $this->buildQuery();
-
-        return $this->getJson($this->currentUri . $query);
     }
 
     public function filter(array $filter): Endpoint

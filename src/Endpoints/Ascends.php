@@ -16,6 +16,6 @@ final class Ascends extends Endpoint
 
     public function all(): array
     {
-        return $this->getJson('/ascends');
+        return $this->get('/ascends');
     }
 }
