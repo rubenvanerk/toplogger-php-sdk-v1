@@ -20,4 +20,9 @@ class Users extends Endpoint
     {
         return $this->get('/users/' . $id . '/stats');
     }
+
+    public function strengthHistory(int|string $id): stdClass
+    {
+        return $this->get('/users/' . $id . '/strength_history');
+    }
 }
