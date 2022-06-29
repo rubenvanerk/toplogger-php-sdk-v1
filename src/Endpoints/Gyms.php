@@ -21,4 +21,10 @@ final class Gyms extends Endpoint
         $this->currentUri = '/gyms/' . $gymId . '/climbs';
         return $this;
     }
+
+    public function rankedAthletes(int|string $gymId): Endpoint
+    {
+        $this->currentUri = '/gyms/' . $gymId . '/ranked_users';
+        return $this;
+    }
 }

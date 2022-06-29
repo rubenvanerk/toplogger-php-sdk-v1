@@ -52,7 +52,11 @@ abstract class Endpoint
             return '';
         }
 
-        $params = array_merge($this->params, ['json_params' => $this->buildJsonParams()]);
+        if ($this->filters || $this->includes) {
+            $params = array_merge($this->params, ['json_params' => $this->buildJsonParams()]);
+        } else {
+            $params = $this->params;
+        }
 
         return '?' . urldecode(http_build_query($params));
     }
