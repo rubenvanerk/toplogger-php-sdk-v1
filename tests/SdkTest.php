@@ -1,8 +1,8 @@
 <?php
 
-use RubenVanErk\TopLoggerPhpSdk\TopLogger;
+
 
 it('actually works', function () {
-    $sdk = new TopLogger();
-    expect($sdk->gyms()->include(['holds', 'walls', 'setters'])->find('8'))->dd();
+    $sdk = new \RubenVanErk\TopLoggerPhpSdk\SDK();
+    var_dump($sdk->gyms()->get(8));die;
 });
