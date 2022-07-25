@@ -11,4 +11,9 @@ class GymCollection extends RequestCollection
     {
         return $this->connector->send(new GetGym($gymId))->dto();
     }
+
+    public function all(): array
+    {
+        return $this->connector->send(new GetGyms())->dto();
+    }
 }
