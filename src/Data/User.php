@@ -3,7 +3,6 @@
 namespace RubenVanErk\TopLoggerPhpSdk\Data;
 
 use Illuminate\Support\Collection;
-use Livewire\Wireable;
 use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\DataTransferObject;
 

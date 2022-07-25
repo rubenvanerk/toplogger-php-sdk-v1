@@ -7,8 +7,11 @@ PHP SDK for the TopLogger API
 use RubenVanErk\TopLoggerPhpSdk\SDK;
 $sdk = new SDK();
 
-// find a gym
+// get a gym
 $sdk->gyms()->get('8');
+
+// get all gyms
+$sdk->gyms()->all()
 
 // find a user
 $sdk->users()->get('104045');

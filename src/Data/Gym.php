@@ -2,7 +2,9 @@
 
 namespace RubenVanErk\TopLoggerPhpSdk\Data;
 
+use Spatie\DataTransferObject\Attributes\CastWith;
 use Spatie\DataTransferObject\Attributes\MapFrom;
+use Spatie\DataTransferObject\Casters\ArrayCaster;
 use Spatie\DataTransferObject\DataTransferObject;
 
 class Gym extends DataTransferObject
@@ -15,4 +17,7 @@ class Gym extends DataTransferObject
     public string $name;
 
     public ?string $city;
+
+    #[CastWith(ArrayCaster::class, itemType: GymResource::class), MapFrom('gym_resources')]
+    public array $resources;
 }

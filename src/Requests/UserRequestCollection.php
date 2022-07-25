@@ -4,7 +4,6 @@ namespace RubenVanErk\TopLoggerPhpSdk\Requests;
 
 use RubenVanErk\TopLoggerPhpSdk\Data\User;
 use RubenVanErk\TopLoggerPhpSdk\Requests\User\GetUserRequest;
-use Sammyjo20\Saloon\Http\RequestCollection;
 
 class UserRequestCollection extends RequestCollection
 {

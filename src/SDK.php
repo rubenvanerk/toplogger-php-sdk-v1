@@ -2,6 +2,7 @@
 
 namespace RubenVanErk\TopLoggerPhpSdk;
 
+use RubenVanErk\TopLoggerPhpSdk\Plugins\HasJsonParams;
 use RubenVanErk\TopLoggerPhpSdk\Requests\GymRequestCollection;
 use RubenVanErk\TopLoggerPhpSdk\Requests\UserRequestCollection;
 use Sammyjo20\Saloon\Http\SaloonConnector;
@@ -12,6 +13,8 @@ use Sammyjo20\Saloon\Http\SaloonConnector;
  */
 class SDK extends SaloonConnector
 {
+    use HasJsonParams;
+
     protected array $requests = [
         'users' => UserRequestCollection::class,
         'gyms' => GymRequestCollection::class,
