@@ -1,13 +1,14 @@
 <?php
 
-namespace RubenVanErk\TopLoggerPhpSdk\Requests;
+namespace RubenVanErk\TopLoggerPhpSdk\Requests\User;
 
 use RubenVanErk\TopLoggerPhpSdk\Data\User;
+use RubenVanErk\TopLoggerPhpSdk\Requests\Request;
 use Sammyjo20\Saloon\Constants\Saloon;
 use Sammyjo20\Saloon\Http\SaloonResponse;
 use Sammyjo20\Saloon\Traits\Plugins\CastsToDto;
 
-class GetUser extends Request
+class GetUserRequest extends Request
 {
     use CastsToDto;
 

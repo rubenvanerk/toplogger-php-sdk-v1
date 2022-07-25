@@ -2,19 +2,19 @@
 
 namespace RubenVanErk\TopLoggerPhpSdk;
 
-use RubenVanErk\TopLoggerPhpSdk\Requests\GymCollection;
-use RubenVanErk\TopLoggerPhpSdk\Requests\UserCollection;
+use RubenVanErk\TopLoggerPhpSdk\Requests\GymRequestCollection;
+use RubenVanErk\TopLoggerPhpSdk\Requests\UserRequestCollection;
 use Sammyjo20\Saloon\Http\SaloonConnector;
 
 /**
- * @method UserCollection users
- * @method GymCollection gyms
+ * @method UserRequestCollection users
+ * @method GymRequestCollection gyms
  */
 class SDK extends SaloonConnector
 {
     protected array $requests = [
-        'users' => UserCollection::class,
-        'gyms' => GymCollection::class,
+        'users' => UserRequestCollection::class,
+        'gyms' => GymRequestCollection::class,
     ];
 
     public function defineBaseUrl(): string

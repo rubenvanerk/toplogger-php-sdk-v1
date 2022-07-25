@@ -1,13 +1,14 @@
 <?php
 
-namespace RubenVanErk\TopLoggerPhpSdk\Requests;
+namespace RubenVanErk\TopLoggerPhpSdk\Requests\Gym;
 
 use RubenVanErk\TopLoggerPhpSdk\Data\Gym;
+use RubenVanErk\TopLoggerPhpSdk\Requests\Request;
 use Sammyjo20\Saloon\Constants\Saloon;
 use Sammyjo20\Saloon\Http\SaloonResponse;
 use Sammyjo20\Saloon\Traits\Plugins\CastsToDto;
 
-class GetGyms extends Request
+class GetGymsRequest extends Request
 {
     use CastsToDto;
 
