@@ -55,7 +55,7 @@ trait HasJsonParams
         return $this;
     }
 
-    public function addFilter(string $key, string $value): static
+    public function addFilter(string $key, array|string $value): static
     {
         $this->jsonParams['filters'][$key] = $value;
 

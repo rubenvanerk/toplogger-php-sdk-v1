@@ -3,6 +3,7 @@
 namespace RubenVanErk\TopLoggerPhpSdk;
 
 use RubenVanErk\TopLoggerPhpSdk\Plugins\HasJsonParams;
+use RubenVanErk\TopLoggerPhpSdk\Requests\AscendRequestCollection;
 use RubenVanErk\TopLoggerPhpSdk\Requests\GymRequestCollection;
 use RubenVanErk\TopLoggerPhpSdk\Requests\UserRequestCollection;
 use Sammyjo20\Saloon\Http\SaloonConnector;
@@ -10,6 +11,7 @@ use Sammyjo20\Saloon\Http\SaloonConnector;
 /**
  * @method UserRequestCollection users
  * @method GymRequestCollection gyms
+ * @method AscendRequestCollection ascends
  */
 class SDK extends SaloonConnector
 {
@@ -18,6 +20,7 @@ class SDK extends SaloonConnector
     protected array $requests = [
         'users' => UserRequestCollection::class,
         'gyms' => GymRequestCollection::class,
+        'ascends' => AscendRequestCollection::class,
     ];
 
     public function defineBaseUrl(): string

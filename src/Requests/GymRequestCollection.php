@@ -4,7 +4,7 @@ namespace RubenVanErk\TopLoggerPhpSdk\Requests;
 
 use RubenVanErk\TopLoggerPhpSdk\Data\Gym;
 use RubenVanErk\TopLoggerPhpSdk\Requests\Gym\GetGymRequest;
-use RubenVanErk\TopLoggerPhpSdk\Requests\Gym\GetGymsRequest;
+use RubenVanErk\TopLoggerPhpSdk\Requests\Gym\ListGymsRequest;
 
 class GymRequestCollection extends RequestCollection
 {
@@ -15,6 +15,6 @@ class GymRequestCollection extends RequestCollection
 
     public function all(): ?array
     {
-        return $this->connector->send(new GetGymsRequest())->dto();
+        return $this->connector->send(new ListGymsRequest())->dto();
     }
 }
