@@ -15,6 +15,12 @@ class User extends DataTransferObject
     #[MapFrom('full_name')]
     public ?string $fullName;
 
+    #[MapFrom('first_name')]
+    public ?string $firstName;
+
+    #[MapFrom('last_name')]
+    public ?string $lastName;
+
     public ?string $gender;
 
     public ?string $avatar;

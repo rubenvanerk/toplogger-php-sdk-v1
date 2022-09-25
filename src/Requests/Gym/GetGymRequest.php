@@ -14,14 +14,14 @@ class GetGymRequest extends Request
 
     protected ?string $method = Saloon::GET;
 
+    public function __construct(
+        public int $gymId
+    ){}
+
     public function defineEndpoint(): string
     {
         return '/gyms/' . $this->gymId;
     }
-
-    public function __construct(
-        public int $gymId
-    ){}
 
     public function castToDto(SaloonResponse $response): Gym
     {

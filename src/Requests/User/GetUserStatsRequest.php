@@ -3,12 +3,13 @@
 namespace RubenVanErk\TopLoggerPhpSdk\Requests\User;
 
 use RubenVanErk\TopLoggerPhpSdk\Data\User;
+use RubenVanErk\TopLoggerPhpSdk\Data\UserStats;
 use RubenVanErk\TopLoggerPhpSdk\Requests\Request;
 use Sammyjo20\Saloon\Constants\Saloon;
 use Sammyjo20\Saloon\Http\SaloonResponse;
 use Sammyjo20\Saloon\Traits\Plugins\CastsToDto;
 
-class GetUserRequest extends Request
+class GetUserStatsRequest extends Request
 {
     use CastsToDto;
 
@@ -16,15 +17,17 @@ class GetUserRequest extends Request
 
     public function __construct(
         public int $userId
-    ){}
+    )
+    {
+    }
 
     public function defineEndpoint(): string
     {
-        return '/users/' . $this->userId;
+        return '/users/' . $this->userId . '/stats';
     }
 
-    public function castToDto(SaloonResponse $response): User
+    public function castToDto(SaloonResponse $response): UserStats
     {
-        return new User($response->json());
+        return new UserStats($response->json());
     }
 }
