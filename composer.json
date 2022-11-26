@@ -12,7 +12,9 @@
     "require": {
         "php": "^8.1",
         "sammyjo20/saloon": "^1.4",
-        "spatie/data-transfer-object": "^3.8"
+        "spatie/data-transfer-object": "^3.8",
+        "illuminate/support": "^9.0",
+        "illuminate/collections": "^9.0"
     },
     "require-dev": {
         "pestphp/pest": "^1.21"

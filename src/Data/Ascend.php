@@ -2,27 +2,31 @@
 
 namespace RubenVanErk\TopLoggerPhpSdk\Data;
 
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\DataTransferObject;
 
-class Ascend extends DataTransferObject
+use Illuminate\Database\Eloquent\Casts\AsArrayObject;
+
+class Ascend extends DataObject
 {
-    public int $id;
+    public function __construct(
+        public int $id,
+        public int $userId,
+        public int $climbId,
+        public bool $topped,
+        public string $dateLogged,
+        public bool $used,
+        public int $checks,
+        public Climb $climb,
+    )
+    {
 
-    #[MapFrom('user_id')]
-    public int $userId;
+    }
 
-    #[MapFrom('climb_id')]
-    public int $climbId;
+    public static function makeFromResponse(array $data)
+    {
+        $data = self::cleanData($data);
 
-    public bool $topped;
+        $data['climb'] = Climb::makeFromResponse($data['climb']);
 
-    #[MapFrom('date_logged')]
-    public string $dateLogged;
-
-    public bool $used;
-
-    public int $checks;
-
-    public Climb $climb;
+        return new Ascend(...$data);
+    }
 }

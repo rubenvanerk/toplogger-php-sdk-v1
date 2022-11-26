@@ -2,13 +2,13 @@
 
 namespace RubenVanErk\TopLoggerPhpSdk\Classes;
 
-use RubenVanErk\TopLoggerPhpSdk\Data\Climb;
+use RubenVanErk\TopLoggerPhpSdk\Data\UserStatsAscend;
 use RubenVanErk\TopLoggerPhpSdk\Data\Gym;
 
 class GradeConverter
 {
     public readonly string $grade;
-    public readonly Climb $climb;
+    public readonly UserStatsAscend $climb;
     public readonly ?Gym $gym;
 
     public static function fromGrade(string $grade): GradeConverter
@@ -19,7 +19,7 @@ class GradeConverter
         return $converter;
     }
 
-    public static function fromClimb(Climb $climb, ?Gym $gym = null)
+    public static function fromClimb(UserStatsAscend $climb, ?Gym $gym = null)
     {
         // TODO: implement
     }

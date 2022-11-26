@@ -34,7 +34,7 @@ class ListAscends extends Request
     public function castToDto(SaloonResponse $response): array
     {
         return array_map(
-            fn(array $ascend) => new Ascend($ascend),
+            fn(array $ascend) => Ascend::makefromResponse($ascend),
             $response->json()
         );
     }

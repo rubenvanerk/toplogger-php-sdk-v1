@@ -28,6 +28,6 @@ class GetUserStatsRequest extends Request
 
     public function castToDto(SaloonResponse $response): UserStats
     {
-        return new UserStats($response->json());
+        return UserStats::makeFromResponse($response->json());
     }
 }
