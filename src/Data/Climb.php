@@ -35,6 +35,7 @@ class Climb extends DataObject
         public readonly ?int $ropeNumber = null,
         public readonly ?string $remarks = null,
         public readonly ?int $zones = null,
+        public readonly ?int $order = null,
     )
     {
 
