@@ -2,9 +2,6 @@
 
 namespace RubenVanErk\TopLoggerPhpSdk\Data;
 
-
-use Illuminate\Database\Eloquent\Casts\AsArrayObject;
-
 class Ascend extends DataObject
 {
     public function __construct(
@@ -15,7 +12,7 @@ class Ascend extends DataObject
         public string $dateLogged,
         public bool $used,
         public int $checks,
-        public Climb $climb,
+        public ?Climb $climb = null,
         public readonly ?string $zone = null,
         public readonly ?string $topType = null,
     )
@@ -27,7 +24,9 @@ class Ascend extends DataObject
     {
         $data = self::cleanData($data);
 
-        $data['climb'] = Climb::makeFromResponse($data['climb']);
+        if (isset($data['climb'])) {
+            $data['climb'] = Climb::makeFromResponse($data['climb']);
+        }
 
         return new Ascend(...$data);
     }
