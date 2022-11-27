@@ -7,8 +7,6 @@ class Climb extends DataObject
     public function __construct(
         public readonly int $id,
         public readonly string $grade,
-        public readonly string $positionX,
-        public readonly string $positionY,
         public readonly string $climbType,
         public readonly bool $suitableForKids,
         public readonly int $gymId,
@@ -24,6 +22,8 @@ class Climb extends DataObject
         public readonly string $gradeStability,
         public readonly string $gradeStabilityAdmin,
         public readonly bool $renew,
+        public readonly ?string $positionX = null,
+        public readonly ?string $positionY = null,
         public readonly ?int $wallId = null,
         public readonly ?string $name = null,
         public readonly ?string $dateSet = null,
