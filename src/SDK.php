@@ -24,7 +24,7 @@ class SDK extends SaloonConnector
     public function defaultConfig(): array
     {
         return [
-            'timeout' => 30,
+            'timeout' => 120,
         ];
     }
 }
