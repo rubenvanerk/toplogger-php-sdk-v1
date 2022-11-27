@@ -16,6 +16,7 @@ class Ascend extends DataObject
         public bool $used,
         public int $checks,
         public Climb $climb,
+        public readonly ?string $zone = null,
     )
     {
 
